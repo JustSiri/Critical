@@ -1,0 +1,7 @@
+name: Crit
+version: ${project.version}
+main: justsiri.critt.crit.Crit
+api-version: 1.16
+
+commands:
+  critical:
