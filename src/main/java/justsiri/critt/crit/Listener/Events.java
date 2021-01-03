@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Events implements Listener {
@@ -37,11 +38,13 @@ public class Events implements Listener {
                 ArmorStand hologram = (ArmorStand) player.getWorld().spawnEntity(victim.getLocation(), EntityType.ARMOR_STAND);
                 hologram.setVisible(false);
                 hologram.setCustomNameVisible(true);
+                DecimalFormat df = new DecimalFormat("##");
+                String damage = df.format(e.getFinalDamage());
                 if (p <= crit_chance || player.isOp()) {
                     e.setDamage(e.getDamage() * 1.5);
-                    hologram.setCustomName(ChatColor.RED + "✧ " + e.getDamage());
+                    hologram.setCustomName(ChatColor.RED + "✧ " + damage);
                 } else {
-                    hologram.setCustomName(ChatColor.WHITE + String.valueOf(e.getDamage()));
+                    hologram.setCustomName(ChatColor.WHITE + damage);
                 }
                 hologram.setHealth(0);
             }
