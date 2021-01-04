@@ -11,5 +11,10 @@ public final class Crit extends JavaPlugin {
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(new Events(), this);
         getCommand("critical").setExecutor(new CheckCC());
+
+        //구성 파일을 설정합니다.
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
     }
 }
