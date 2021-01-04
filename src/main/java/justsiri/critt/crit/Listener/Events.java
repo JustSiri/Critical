@@ -42,9 +42,9 @@ public class Events implements Listener {
                 String damage = df.format(e.getFinalDamage());
                 if (p <= crit_chance || player.isOp()) {
                     e.setDamage(e.getDamage() * 1.5);
-                    hologram.setCustomName(ChatColor.RED + "✧ " + damage);
+                    hologram.setCustomName(ChatColor.RED + "✧ " + damage + "0");
                 } else {
-                    hologram.setCustomName(ChatColor.WHITE + damage);
+                    hologram.setCustomName(ChatColor.WHITE + damage + "0");
                 }
                 hologram.setHealth(0);
             }
